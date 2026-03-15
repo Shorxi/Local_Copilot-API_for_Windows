@@ -9,7 +9,7 @@ please contact:
 **Name:** Emanuel Schaaf  
 **Email:** emanuel.schaaf@outlook.com
 **Location:** Pirmasens, Germany  
-**Role:** Architect & Originator of the 14-THz-Ball-Lens-Composite Technology
+**Role:** Architect 
 
 ---
 
