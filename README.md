@@ -1,4 +1,4 @@
-<img src="https://github.com/Shorxi/Local_Copilot-API_for_Windows/blob/main/Pictures/Local_Copilot_API_Architecture.png" alt="Local Copilot API Architecture" width="100%" />
+<img src="https://github.com/Shorxi/Local_Copilot-API_for_Windows/blob/main/Pictures/Local_Copilot-API_for_Windows.png" width="100%" alt="Local Copilot API Architecture" />
 
 # Local Copilot API for Windows 11  
 ### Secure, Hardware‑Bound, Deterministic Automation Layer for Microsoft Copilot
@@ -35,12 +35,9 @@ This repository contains the full engineering draft, developer onboarding layer,
 ## 📂 Repository Structure
 
 ### **📁 Local Copilot API Documentation**
-- [Developer Onboarding Layer – Version 1.0](Local_Copilot-API_for_Windows/Developer_Onboarding_Layer.pdf)  
-- [Local Copilot API – Full Architecture Draft](Local_Copilot-API_for_Windows/Local_Copilot_API_for_Windows_11.pdf)  
+- [Developer Onboarding Layer – Version 1.0](Local_Copilot-API_for_Windows/Developer_Onboarding_Layer–Version_1.0.pdf)  
+- [Local Copilot API – Full Architecture Draft](Local_Copilot-API_for_Windows/Local_Copilot-API_for_Windows.pdf)  
 - [Introduction & Problem Statement](Local_Copilot-API_for_Windows/Introduction.pdf)
-
-### **🖼️ Pictures**
-- [Architecture Diagrams & Visuals](Pictures)
 
 ---
 
