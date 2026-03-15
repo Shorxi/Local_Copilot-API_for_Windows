@@ -1,4 +1,5 @@
-<img src="https://github.com/Shorxi/Local_Copilot-API_for_Windows/blob/main/Pictures/Local_Copilot-API_for_Windows.png" width="100%" alt="Local Copilot API Architecture" />
+[<img src="https://github.com/Shorxi/Local_Copilot-API_for_Windows/blob/main/Pictures/Local_Copilot-API_for_Windows.png" width="100%" alt="Local Copilot API Architecture" />](https://github.com/Shorxi/Local_Copilot-API_for_Windows/tree/main)
+
 
 # Local Copilot API for Windows 11  
 ### Secure, Hardware‑Bound, Deterministic Automation Layer for Microsoft Copilot
