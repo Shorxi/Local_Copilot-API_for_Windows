@@ -1,14 +1,17 @@
-# Basis-URL deines GitHub-Hauptverzeichnisses
-$baseUrl = "https://github.com/Shorxi/Local_Copilot-API_for_Windows/tree/main/"
+# GitHub API URL für dein Hauptverzeichnis
+$apiUrl = "https://api.github.com/repos/Shorxi/Local_Copilot-API_for_Windows/contents/"
 
-# Lokale Dateien im Ordner einlesen
-$files = Get-ChildItem -File
+# GitHub API aufrufen
+$response = Invoke-RestMethod -Uri $apiUrl -Headers @{ "User-Agent" = "PowerShell" }
 
-Write-Host "=== Dateien im Repository ===" -ForegroundColor White
+# Nur Dateien filtern
+$files = $response | Where-Object { $_.type -eq "file" }
+
+Write-Host "=== Dateien im GitHub-Repository ===" -ForegroundColor White
 
 # Liste anzeigen
 for ($i = 0; $i -lt $files.Count; $i++) {
-    Write-Host "$($i+1)) $($files[$i].Name)"
+    Write-Host "$($i+1)) $($files[$i].name)"
 }
 
 # Auswahl
@@ -18,13 +21,13 @@ $choice = Read-Host "Welche Datei möchtest du markieren?"
 $index = [int]$choice - 1
 
 # Datei auswählen
-$selected = $files[$index].Name
+$selected = $files[$index]
 
 # GitHub-Link erzeugen
-$fullPath = $baseUrl + $selected
+$fullPath = $selected.html_url
 
 # Markierung
-$marked = "$selected (01)"
+$marked = "$($selected.name) (01)"
 
 Write-Host ""
 Write-Host "Ausgewählt: $marked" -ForegroundColor Green
