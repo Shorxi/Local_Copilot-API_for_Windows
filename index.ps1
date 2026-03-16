@@ -1,6 +1,14 @@
 # GitHub API URL für dein Hauptverzeichnis
 $apiUrl = "https://api.github.com/repos/Shorxi/Local_Copilot-API_for_Windows/contents/"
 
+# Datei für gespeicherte Markierungen
+$indexFile = "index.txt"
+
+# Falls Datei nicht existiert → erstellen
+if (!(Test-Path $indexFile)) {
+    New-Item $indexFile -ItemType File | Out-Null
+}
+
 # GitHub API aufrufen
 $response = Invoke-RestMethod -Uri $apiUrl -Headers @{ "User-Agent" = "PowerShell" }
 
@@ -26,10 +34,20 @@ $selected = $files[$index]
 # GitHub-Link erzeugen
 $fullPath = $selected.html_url
 
-# Markierung
-$marked = "$($selected.name) (01)"
+# Automatische Nummerierung
+$existing = Get-Content $indexFile
+$nextNumber = "{0:D2}" -f ($existing.Count + 1)
+
+# Markierung erstellen
+$marked = "$nextNumber - $($selected.name) - $fullPath"
+
+# In Datei speichern
+Add-Content -Path $indexFile -Value $marked
 
 Write-Host ""
-Write-Host "Ausgewählt: $marked" -ForegroundColor Green
-Write-Host "GitHub-Pfad:" -ForegroundColor Yellow
-Write-Host $fullPath -ForegroundColor Cyan
+Write-Host "=== Neue Markierung gespeichert ===" -ForegroundColor Green
+Write-Host $marked -ForegroundColor Cyan
+
+Write-Host ""
+Write-Host "=== Gesamte Historie ===" -ForegroundColor Yellow
+Get-Content $indexFile
